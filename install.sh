@@ -138,14 +138,14 @@ install_V2bX() {
             exit 1
         fi
         echo -e "检测到 V2bX 最新版本：${last_version}，开始安装"
-        wget --no-check-certificate -N --progress=bar -O /usr/local/V2bX/V2bX-linux.zip https://github.com/ouyangmland/V2bX-singbox/releases/download/${last_version}/V2bX-linux-${arch}.zip
+        wget --no-check-certificate -N --progress=bar -O /usr/local/V2bX/V2bX-linux.zip https://github.com/ouyangmland/V2bX-singbox/releases/download/${last_version}/V2bX-linux-amd64${arch}.zip
         if [[ $? -ne 0 ]]; then
             echo -e "${red}下载 V2bX 失败，请确保你的服务器能够下载 Github 的文件${plain}"
             exit 1
         fi
     else
         last_version=$1
-        url="https://github.com/ouyangmland/V2bX-singbox/releases/download/${last_version}/V2bX-linux-${arch}.zip"
+        url="https://github.com/ouyangmland/V2bX-singbox/releases/download/${last_version}/V2bX-linux-amd64${arch}.zip"
         echo -e "开始安装 V2bX $1"
         wget --no-check-certificate -N --progress=bar -O /usr/local/V2bX/V2bX-linux.zip ${url}
         if [[ $? -ne 0 ]]; then
